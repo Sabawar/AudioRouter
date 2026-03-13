@@ -122,42 +122,6 @@ Five modes per input node, applied before routing:
 
 ---
 
-## 🏗 Building from Source
-
-### Prerequisites
-
-- Visual Studio 2022 (with C++ Desktop workload)
-- CMake 3.20+
-- Git
-
-### Steps
-
-```bat
-git clone https://github.com/Sabawar/AudioRouter.git
-cd AudioRouter
-
-REM Delete old build folder if present
-rmdir /s /q build
-
-cmake -B build -G "Visual Studio 17 2022" -A x64
-cmake --build build --config Release
-```
-
-Output binary: `build\bin\Release\AudioRouter.exe`
-
-### Secrets (Client ID)
-
-ASIO and WASAPI features require a Twitch / API client ID stored in `secrets.cpp`.  
-Copy the template and fill in your credentials:
-
-```bat
-copy secrets.cpp.template secrets.cpp
-```
-
-> `secrets.cpp` is in `.gitignore` and must never be committed.
-
----
-
 ## 🏛 Architecture
 
 ```
@@ -260,19 +224,6 @@ Startup
                                       ├─ bat: PowerShell Expand-Archive
                                       └─ bat: starts new AudioRouter.exe
 ```
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes please open an issue first.
-
-1. Fork the repo
-2. Create a feature branch: `git checkout -b feature/my-feature`
-3. Commit your changes: `git commit -m 'Add my feature'`
-4. Push and open a Pull Request
-
----
 
 ## 📄 License
 
